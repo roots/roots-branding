@@ -13,7 +13,7 @@ class Init
         add_action('admin_bar_menu', [$this, 'create_menu'], 1);
         add_action('wp_before_admin_bar_render', [$this, 'menu_custom_logo']);
         add_filter('login_headerurl', [$this, 'login_logo_url']);
-        add_filter('login_headertitle', [$this, 'login_logo_title']);
+        add_filter('login_headertext', [$this, 'login_logo_headertext']);
     }
 
 
@@ -56,7 +56,7 @@ class Init
 
 
     // Replace login logo title
-    public function login_logo_title()
+    public function login_logo_headertext()
     {
         return 'Powered by Roots';
     }
